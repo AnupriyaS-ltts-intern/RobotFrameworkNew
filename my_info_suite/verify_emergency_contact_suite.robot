@@ -3,14 +3,15 @@ Documentation     This suite handles test case related to emergency contact
 
 Resource       ../Resource/Base/CommonFunctionality.resource
 
+Library     DataDriver     file=../test_data/orange_data.xlsx     sheet_name=AddEmergencyContact
+
 Test Setup     Launch Browser
 Test Teardown      Close Browser
 
 Test Template     Verify Add Emergency Contact Template
 
 *** Test Cases ***
-TC1     Admin     admin123     John     Brother     787878
-TC2     Admin     admin123     Sandy     Sister     787878
+TC1
 
 *** Keywords ***
 Verify Add Emergency Contact Template
