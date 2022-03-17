@@ -4,13 +4,21 @@ Documentation     This suite will handles all the test cases related to invalid
 
 Resource       ../Resource/Base/CommonFunctionality.resource
 
+Test Setup     Launch Browser
 Test Teardown      Close Browser
 
+Test Template     Verify Invalid Credential Template
+
 *** Test Cases ***
-Verify Invalid Credential Test
-    Launch Browser
-    Input Text    id=txtUsername    Anupriya
-    Input Password    id=txtPassword    pass123
+TC1     John     john123     Invalid credentials
+TC1     Peter     peter123     Invalid credentials
+
+
+*** Keywords ***
+Verify Invalid Credential Template
+    [Arguments]     ${username}     ${password}     ${expected_error}
+    Input Text    id=txtUsername    ${username}
+    Input Password    id=txtPassword    ${password}
     Click Element    id=btnLogin
-    Element Text Should Be    id=spanMessage    Invalid credentials
+    Element Text Should Be    id=spanMessage    ${expected_error}
 
