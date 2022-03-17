@@ -1,69 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220317 12:01:52.827" rpa="false" schemaversion="2">
-<suite id="s1" name="Verify Validcredential Suite" source="D:\ROBOT\robot_framework\login_suite\verify_validcredential_suite.robot">
-<test id="s1-t1" name="Verify Valid Credential Test">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220317 13:47:20.880" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Invalidcredential Suite" source="D:\ROBOT\robot_framework\login_suite\verify_invalidcredential_suite.robot">
+<test id="s1-t1" name="Verify Invalid Credential Test">
 <kw name="Launch Browser" library="CommonFunctionality">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
+<arg>browser=${BROWSER_NAME}</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220317 12:01:54.638" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220317 12:01:54.637" endtime="20220317 12:02:04.810"/>
+<msg timestamp="20220317 13:47:23.127" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220317 13:47:23.125" endtime="20220317 13:47:39.472"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220317 12:02:04.810" endtime="20220317 12:02:04.935"/>
+<status status="PASS" starttime="20220317 13:47:39.472" endtime="20220317 13:47:39.642"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220317 12:02:04.935" endtime="20220317 12:02:04.968"/>
+<status status="PASS" starttime="20220317 13:47:39.643" endtime="20220317 13:47:39.671"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://opensource-demo.orangehrmlive.com/</arg>
+<arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220317 12:02:04.968" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220317 12:02:04.968" endtime="20220317 12:02:09.693"/>
+<msg timestamp="20220317 13:47:39.672" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" starttime="20220317 13:47:39.671" endtime="20220317 13:47:45.402"/>
 </kw>
-<status status="PASS" starttime="20220317 12:01:54.636" endtime="20220317 12:02:09.694"/>
+<status status="PASS" starttime="20220317 13:47:23.124" endtime="20220317 13:47:45.403"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=txtUsername</arg>
-<arg>Admin</arg>
+<arg>Anupriya</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220317 12:02:09.696" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220317 12:02:09.695" endtime="20220317 12:02:09.877"/>
+<msg timestamp="20220317 13:47:45.407" level="INFO">Typing text 'Anupriya' into text field 'id=txtUsername'.</msg>
+<status status="PASS" starttime="20220317 13:47:45.404" endtime="20220317 13:47:46.456"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>id=txtPassword</arg>
-<arg>admin123</arg>
+<arg>pass123</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220317 12:02:09.882" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220317 12:02:09.967" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220317 12:02:10.066" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220317 12:02:09.881" endtime="20220317 12:02:10.067"/>
+<msg timestamp="20220317 13:47:46.458" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<msg timestamp="20220317 13:47:46.548" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220317 13:47:46.891" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220317 13:47:46.457" endtime="20220317 13:47:46.891"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id=btnLogin</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220317 12:02:10.068" level="INFO">Clicking element 'id=btnLogin'.</msg>
-<status status="PASS" starttime="20220317 12:02:10.067" endtime="20220317 12:02:18.160"/>
+<msg timestamp="20220317 13:47:46.893" level="INFO">Clicking element 'id=btnLogin'.</msg>
+<status status="PASS" starttime="20220317 13:47:46.892" endtime="20220317 13:47:49.294"/>
 </kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>My Info</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220317 12:02:18.190" level="INFO">Current page contains text 'My Info'.</msg>
-<status status="PASS" starttime="20220317 12:02:18.162" endtime="20220317 12:02:18.190"/>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>id=spanMessage</arg>
+<arg>Invalid credentials</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220317 13:47:49.297" level="INFO">Verifying element 'id=spanMessage' contains exact text 'Invalid credentials'.</msg>
+<status status="PASS" starttime="20220317 13:47:49.296" endtime="20220317 13:47:49.399"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220317 12:02:18.191" endtime="20220317 12:02:22.554"/>
+<status status="PASS" starttime="20220317 13:47:49.400" endtime="20220317 13:47:52.118"/>
 </kw>
-<status status="PASS" starttime="20220317 12:01:54.634" endtime="20220317 12:02:22.555"/>
+<status status="PASS" starttime="20220317 13:47:23.123" endtime="20220317 13:47:52.118"/>
 </test>
-<doc>This suite will handles all the test cases related to valid
-credential test for orangehrm. Test case - TC_OH_2</doc>
-<status status="PASS" starttime="20220317 12:01:52.831" endtime="20220317 12:02:22.557"/>
+<doc>This suite will handles all the test cases related to invalid
+credential test for orangehrm. Test case - TC_OH_3</doc>
+<status status="PASS" starttime="20220317 13:47:20.887" endtime="20220317 13:47:52.125"/>
 </suite>
 <statistics>
 <total>
@@ -72,7 +73,7 @@ credential test for orangehrm. Test case - TC_OH_2</doc>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Verify Validcredential Suite">Verify Validcredential Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Verify Invalidcredential Suite">Verify Invalidcredential Suite</stat>
 </suite>
 </statistics>
 <errors>
