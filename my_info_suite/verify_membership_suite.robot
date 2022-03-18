@@ -1,6 +1,9 @@
 *** Settings ***
 Documentation   This suite will test the membership details
+
 Resource      ../Resource/Base/CommonFunctionality.resource
+
+Library     DataDriver     file=../test_data/orange_data (1).xlsx     sheet_name=AddMembership
 
 Test Setup      Launch Browser
 Test Teardown       Close Browser
@@ -8,8 +11,7 @@ Test Teardown       Close Browser
 Test Template     Verify Add Membership Template
 
 *** Test Cases ***
-TCI     Admin     admin123     CIMA     Company     2000     AUD     2022-03-03     2023-03-16
-TCI     Admin     admin123     ACCA     Individual     500     AUD     2022-03-19     2023-03-02
+TCI
 
 *** Keywords ***
 Verify Add Membership Template
