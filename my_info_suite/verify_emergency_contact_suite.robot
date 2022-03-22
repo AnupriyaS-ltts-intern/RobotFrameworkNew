@@ -1,7 +1,9 @@
 *** Settings ***
 Documentation     This suite handles test case related to emergency contact
 
-Resource       ../Resource/Base/CommonFunctionality.resource
+Resource     ../Resource/Base/CommonFunctionality.resource
+Resource     ../Resource/Pages/LoginPage.resource
+Resource     ../Resource/Pages/MainPage.resource
 
 Library     DataDriver     file=../test_data/orange_data.xlsx     sheet_name=AddEmergencyContact
 
@@ -16,10 +18,14 @@ TC1
 *** Keywords ***
 Verify Add Emergency Contact Template
     [Arguments]     ${username}     ${password}     ${contact_name}     ${relationship}     ${home_telephone}
-    Input Text    id=txtUsername    ${username}
-    Input Password    id=txtPassword    ${password}
-    Click Element    id=btnLogin
-    Click Element    id=menu_pim_viewMyDetails
+    Enter Username     Admin
+    Enter Password    admin123
+    #Input Text    id=txtUsername    ${username}
+    #Input Password    id=txtPassword    ${password}
+    #Click Element    id=btnLogin
+    Click On Login
+    #Click Element    id=menu_pim_viewMyDetails
+    Click On MyInfo
     Click Element    partial link=Emergency Contacts
     Click Element    id=btnAddContact
     Input Text    name=emgcontacts[name]     ${contact_name}

@@ -2,6 +2,8 @@
 Documentation   This suite will test the membership details
 
 Resource      ../Resource/Base/CommonFunctionality.resource
+Resource      ../Resource/Pages/LoginPage.resource
+Resource      ..//Resource/Pages/MainPage.resource
 
 Library     DataDriver     file=../test_data/orange_data (1).xlsx     sheet_name=AddMembership
 
@@ -16,10 +18,14 @@ TCI
 *** Keywords ***
 Verify Add Membership Template
     [Arguments]     ${username}     ${password}     ${membership}     ${subscription_paid_by}     ${subscription_amount}     ${currency}     ${commence_date}     ${renewal_date}
-    Input Text    id=txtUsername    ${username}
-    Input Password    id=txtPassword    ${password}
-    Click Element    id=btnLogin
-    Click Element    id=menu_pim_viewMyDetails
+    Enter Username     Admin
+    Enter Password    admin123
+    #Input Text    id=txtUsername    ${username}
+    #Input Password    id=txtPassword    ${password}
+    #Click Element    id=btnLogin
+    Click On Login
+    #Click Element    id=menu_pim_viewMyDetails
+    Click On MyInfo
     Click Element    link=Memberships
     Click Element    id=btnAddMembershipDetail
     Select From List By Label    id=membership_membership       ${membership}

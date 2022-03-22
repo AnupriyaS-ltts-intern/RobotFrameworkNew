@@ -9,7 +9,6 @@ ${URL}      https://opensource-demo.orangehrmlive.com/
 
 *** Keywords ***
 Launch Browser
-
     IF  '${BROWSER_NAME}'=='edge'
         Set Local Variable    ${driver_name}     msedgedriver.exe
     ELSE IF  '${BROWSER_NAME}'== 'ff'
@@ -23,4 +22,5 @@ Launch Browser
     Set Selenium Implicit Wait    30s
     Set Screenshot Directory    ${EXECDIR}${/}screenshot
     Go To    url=${URL}
+
 
